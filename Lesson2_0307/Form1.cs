@@ -58,21 +58,25 @@ namespace Lesson2_0307
                             ////button.TextImageRelation = TextImageRelation.ImageAboveText;
                             //Controls.Add(button);
 
-                            PictureBox pict = new PictureBox();
-                            pict.Location = new Point(x, y);
-                            pict.Size = new Size(30, 30);
-                            pict.Image = img;
-                            pict.BackColor = System.Drawing.Color.Transparent;
-                            Controls.Add(pict);
+                            //PictureBox pict = new PictureBox();
+                            //pict.Location = new Point(x, y);
+                            //pict.Size = new Size(30, 30);
+                            //pict.Image = img;
+                            //pict.BackColor = System.Drawing.Color.Transparent;
+                            //Controls.Add(pict);
 
-                            Label label = new Label();
-                            label.Text = icon_name;
-                            label.Location = new Point(x, y + 35);
-                            label.Size = new Size(30, 10);
-                            label.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-                            label.BackColor = System.Drawing.Color.Transparent;
-                            label.ForeColor = Color.White;
-                            Controls.Add(label);
+                            //Label label = new Label();
+                            //label.Text = icon_name;
+                            //label.Location = new Point(x, y + 35);
+                            //label.Size = new Size(30, 10);
+                            //label.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+                            //label.BackColor = System.Drawing.Color.Transparent;
+                            //label.ForeColor = Color.White;
+                            //Controls.Add(label);
+
+                            IconBox icon_box = new IconBox(img, icon_name, x, y);
+                            Controls.Add(icon_box);
+
 
                             y += 50;
                             if (y >= 500) 
@@ -89,22 +93,27 @@ namespace Lesson2_0307
                             try
                             {
 
-                                Image img = Icon.ExtractAssociatedIcon(new_icon_path).ToBitmap();
-                                PictureBox pict = new PictureBox();
-                                pict.Location = new Point(x, y);
-                                pict.Size = new Size(30, 30);
-                                pict.Image = img;
-                                pict.BackColor = System.Drawing.Color.Transparent;
-                                Controls.Add(pict);
+                                //Image img = Icon.ExtractAssociatedIcon(new_icon_path).ToBitmap();
+                                //PictureBox pict = new PictureBox();
+                                //pict.Location = new Point(x, y);
+                                //pict.Size = new Size(30, 30);
+                                //pict.Image = img;
+                                //pict.BackColor = System.Drawing.Color.Transparent;
+                                //Controls.Add(pict);
 
-                                Label label = new Label();
-                                label.Text = icon_name;
-                                label.Location = new Point(x, y + 35);
-                                label.Size = new Size(30, 10);
-                                label.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-                                label.BackColor = System.Drawing.Color.Transparent;
-                                label.ForeColor = Color.White;
-                                Controls.Add(label);
+                                //Label label = new Label();
+                                //label.Text = icon_name;
+                                //label.Location = new Point(x, y + 35);
+                                //label.Size = new Size(30, 10);
+                                //label.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+                                //label.BackColor = System.Drawing.Color.Transparent;
+                                //label.ForeColor = Color.White;
+                                //Controls.Add(label);
+
+                                Image img = Icon.ExtractAssociatedIcon(new_icon_path).ToBitmap();
+                                IconBox icon_box = new IconBox(img, icon_name, x, y);
+                                Controls.Add(icon_box);
+
 
                                 y += 50;
                                 if (y >= 500) 
