@@ -12,6 +12,7 @@ namespace Lesson2_0307
 {
     public partial class IconBox : UserControl
     {
+        DateTime date = DateTime.Now;
         public IconBox()
         {
             InitializeComponent();
@@ -22,6 +23,24 @@ namespace Lesson2_0307
             pictureBox1.Image = img;
             label1.Text = name;
             Location = new Point(x, y);
+        }
+
+        private void IconBox_Click(object sender, EventArgs e)
+        {
+            this.Controls.Clear();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            //IconBox_Click(sender, e);
+            this.Controls.Clear();
+        }
+
+        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        { 
+            Random rand = new Random();
+            TimeSpan span = new TimeSpan(0, 1, 0);
+            if (DateTime.Now - date >= span) this.Location = new Point(rand.Next(0, 1000), rand.Next(0, 1000));
         }
     }
 }

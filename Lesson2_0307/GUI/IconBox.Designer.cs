@@ -52,6 +52,8 @@ namespace Lesson2_0307
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
             // 
             // IconBox
             // 
@@ -63,6 +65,7 @@ namespace Lesson2_0307
             this.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.Name = "IconBox";
             this.Size = new System.Drawing.Size(50, 50);
+            this.Click += new System.EventHandler(this.IconBox_Click);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
