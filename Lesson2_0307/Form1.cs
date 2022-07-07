@@ -34,23 +34,50 @@ namespace Lesson2_0307
                 {
                     
                     string icon_path = null;
+                    string icon_name = null;
                     using (RegistryKey app_key = reg_key.OpenSubKey(name))
+                    {
                         icon_path = app_key?.GetValue("DisplayIcon")?.ToString();
+                        icon_name = app_key?.GetValue("DisplayName")?.ToString();
+                    }
                     if(icon_path!=null)
                     {
                         try
                         {
                             
                             Image img = Icon.ExtractAssociatedIcon(icon_path).ToBitmap();
+
+                            //Button button = new Button();
+                            //button.Location = new Point(x, y);
+                            //button.Size = new Size(30, 30);
+                            //button.BackgroundImage = img;
+                            //button.BackgroundImageLayout = ImageLayout.Stretch;
+                            //button.Text = icon_name;
+                            ////button.ImageAlign = ContentAlignment.TopCenter;
+                            //button.TextAlign = ContentAlignment.BottomCenter;
+                            ////button.TextImageRelation = TextImageRelation.ImageAboveText;
+                            //Controls.Add(button);
+
                             PictureBox pict = new PictureBox();
                             pict.Location = new Point(x, y);
                             pict.Size = new Size(30, 30);
                             pict.Image = img;
+                            pict.BackColor = System.Drawing.Color.Transparent;
                             Controls.Add(pict);
-                            x += 40;
+
+                            Label label = new Label();
+                            label.Text = icon_name;
+                            label.Location = new Point(x, y + 35);
+                            label.Size = new Size(30, 10);
+                            label.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+                            label.BackColor = System.Drawing.Color.Transparent;
+                            label.ForeColor = Color.White;
+                            Controls.Add(label);
+
+                            x += 50;
                             if (x >= 500) 
                             { 
-                                y += 40;
+                                y += 50;
                                 x = 0;
                             }
                         }
@@ -67,11 +94,22 @@ namespace Lesson2_0307
                                 pict.Location = new Point(x, y);
                                 pict.Size = new Size(30, 30);
                                 pict.Image = img;
+                                pict.BackColor = System.Drawing.Color.Transparent;
                                 Controls.Add(pict);
-                                x += 40;
+
+                                Label label = new Label();
+                                label.Text = icon_name;
+                                label.Location = new Point(x, y + 35);
+                                label.Size = new Size(30, 10);
+                                label.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+                                label.BackColor = System.Drawing.Color.Transparent;
+                                label.ForeColor = Color.White;
+                                Controls.Add(label);
+
+                                x += 50;
                                 if (x >= 500) 
                                 { 
-                                    y += 40;
+                                    y += 50;
                                     x = 0;
                                 }
                             }
@@ -80,14 +118,9 @@ namespace Lesson2_0307
                                 //MessageBox.Show(ex1.Message);
                             }
                         }
-                        
-
                     }
                 }
             }
-
-
-
 
         }
 

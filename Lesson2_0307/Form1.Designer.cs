@@ -49,7 +49,7 @@ namespace Lesson2_0307
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Desktop";
             this.ResumeLayout(false);
 
         }
