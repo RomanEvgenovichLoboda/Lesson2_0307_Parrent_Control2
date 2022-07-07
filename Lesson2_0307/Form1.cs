@@ -19,9 +19,9 @@ namespace Lesson2_0307
             using(RegistryKey reg_key = Registry.CurrentUser.OpenSubKey(@"Control Panel\Desktop"))
                 this.BackgroundImage = Image.FromFile(reg_key.GetValue("WallPaper").ToString());
             this.BackgroundImageLayout = ImageLayout.Stretch;
-           
-
-
+            //this.WindowState = FormWindowState.Maximized;
+            //this.FormBorderStyle = FormBorderStyle.None;
+            //Get_Icons();
         }
         private void Get_Icons()
         {
@@ -74,11 +74,11 @@ namespace Lesson2_0307
                             label.ForeColor = Color.White;
                             Controls.Add(label);
 
-                            x += 50;
-                            if (x >= 500) 
+                            y += 50;
+                            if (y >= 500) 
                             { 
-                                y += 50;
-                                x = 0;
+                                x += 50;
+                                y = 0;
                             }
                         }
                         catch (Exception ex)
@@ -106,11 +106,11 @@ namespace Lesson2_0307
                                 label.ForeColor = Color.White;
                                 Controls.Add(label);
 
-                                x += 50;
-                                if (x >= 500) 
+                                y += 50;
+                                if (y >= 500) 
                                 { 
-                                    y += 50;
-                                    x = 0;
+                                    x += 50;
+                                    y = 0;
                                 }
                             }
                             catch (Exception ex1)
