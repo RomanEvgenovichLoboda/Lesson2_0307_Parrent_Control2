@@ -40,7 +40,7 @@ namespace Lesson2_0307
         { 
             Random rand = new Random();
             TimeSpan span = new TimeSpan(0, 1, 0);
-            if (DateTime.Now - date >= span) this.Location = new Point(rand.Next(0, 1000), rand.Next(0, 1000));
+            if (DateTime.Now - date >= span) this.Location = new Point(rand.Next(0, 700), rand.Next(0, 700));
         }
     }
 }
