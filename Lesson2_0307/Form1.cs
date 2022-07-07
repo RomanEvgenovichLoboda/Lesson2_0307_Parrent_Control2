@@ -26,8 +26,8 @@ namespace Lesson2_0307
         private void Get_Icons()
         {
             int x = 0, y = 0;
-            //using (RegistryKey reg_key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall"))
-            using (RegistryKey reg_key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall"))
+            using (RegistryKey reg_key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall"))
+            //using (RegistryKey reg_key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall"))
             {
                 string[] app_names = reg_key.GetSubKeyNames();
                 foreach (string name in app_names)
@@ -40,6 +40,7 @@ namespace Lesson2_0307
                     {
                         try
                         {
+                            
                             Image img = Icon.ExtractAssociatedIcon(icon_path).ToBitmap();
                             PictureBox pict = new PictureBox();
                             pict.Location = new Point(x, y);
@@ -47,12 +48,37 @@ namespace Lesson2_0307
                             pict.Image = img;
                             Controls.Add(pict);
                             x += 40;
-                            if (x >= 1000) { y += 40; }
+                            if (x >= 500) 
+                            { 
+                                y += 40;
+                                x = 0;
+                            }
                         }
                         catch (Exception ex)
                         {
 
-                            MessageBox.Show(ex.Message);
+                            //MessageBox.Show(ex.Message);
+                            string new_icon_path = icon_path.Remove(icon_path.Length - 2);
+                            try
+                            {
+
+                                Image img = Icon.ExtractAssociatedIcon(new_icon_path).ToBitmap();
+                                PictureBox pict = new PictureBox();
+                                pict.Location = new Point(x, y);
+                                pict.Size = new Size(30, 30);
+                                pict.Image = img;
+                                Controls.Add(pict);
+                                x += 40;
+                                if (x >= 500) 
+                                { 
+                                    y += 40;
+                                    x = 0;
+                                }
+                            }
+                            catch (Exception ex1)
+                            {
+                                //MessageBox.Show(ex1.Message);
+                            }
                         }
                         
 
