@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Lesson2_0307
@@ -22,6 +16,7 @@ namespace Lesson2_0307
             InitializeComponent();
             pictureBox1.Image = img;
             label1.Text = name;
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             Location = new Point(x, y);
         }
 
