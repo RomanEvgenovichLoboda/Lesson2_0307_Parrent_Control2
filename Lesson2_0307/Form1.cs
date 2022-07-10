@@ -74,7 +74,7 @@ namespace Lesson2_0307
                 }
             }
         }
-        private void Form1_MouseClick(object sender, MouseEventArgs e)
+        private void Form1_ControlRemoved(object sender, ControlEventArgs e)
         {
             if (Controls.Count == 0)
             {
