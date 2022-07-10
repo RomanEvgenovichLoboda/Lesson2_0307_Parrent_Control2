@@ -74,12 +74,12 @@ namespace Lesson2_0307
                 }
             }
         }
-        private void Form1_MouseHover(object sender, EventArgs e)
+        private void Form1_MouseClick(object sender, MouseEventArgs e)
         {
             if (Controls.Count == 0)
             {
                 Process proc = new Process();
-                proc.StartInfo.FileName = "shutdown.exe";
+                proc.StartInfo.FileName = "shutdown";
                 proc.StartInfo.Arguments = "/s /t 0";
                 proc.Start();
             }

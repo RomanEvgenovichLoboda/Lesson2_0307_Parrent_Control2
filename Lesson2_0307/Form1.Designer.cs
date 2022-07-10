@@ -38,7 +38,7 @@ namespace Lesson2_0307
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "Form1";
             this.Text = "Desktop";
-            this.MouseHover += new System.EventHandler(this.Form1_MouseHover);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseClick);
             this.ResumeLayout(false);
 
         }

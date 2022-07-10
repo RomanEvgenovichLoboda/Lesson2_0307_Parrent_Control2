@@ -22,13 +22,15 @@ namespace Lesson2_0307
 
         private void IconBox_Click(object sender, EventArgs e)
         {
-            this.Controls.Clear();
+            //this.Controls.Clear();
+            Program.Form1.Controls.Remove(this);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             //IconBox_Click(sender, e);
-            this.Controls.Clear();
+            //this.Controls.Clear();
+            Program.Form1.Controls.Remove(this);
         }
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
